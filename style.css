@@ -1,0 +1,164 @@
+/* 1. Färger, typsnitt och mått. Ändra här. */
+:root {
+  --papper: #f5f1e8;     /* sidans bakgrund, som menyns papper */
+  --papper-2: #ebe5d7;
+  --kort: #fbf9f4;
+  --natt: #151b16;       /* loggans svarta */
+  --oliv: #2e4a35;       /* rubriker och knappar på ljus botten */
+  --oliv-mork: #223828;
+  --guld: #c9a462;       /* loggans guld, bara på mörk botten */
+  --guld-text: #7a5c22;  /* guld som klarar 4,5:1 på papper */
+  --blck: #1d241e;
+  --dampad: #555d55;
+  --linje: #d9d1c0;
+  --f: "EB Garamond", Georgia, "Times New Roman", serif;
+  --wrap: 1180px;
+  --sida: clamp(16px, 4vw, 48px);
+}
+
+/* 2. Grund */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--papper); color: var(--blck); font: 400 19px/1.55 var(--f); }
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, h4, p, ul, ol, dl, dd { margin: 0; }
+h2, h3, h4 { font-weight: 600; color: var(--oliv); line-height: 1.05; }
+h2 { font-size: clamp(36px, 5vw, 52px); }
+h3 { font-size: 28px; text-transform: uppercase; letter-spacing: .08em; }
+h4 { font-size: 15px; text-transform: uppercase; letter-spacing: .12em; color: var(--guld-text); margin: 22px 0 6px; }
+h3 span, h4 span { font-weight: 400; color: var(--dampad); text-transform: none; letter-spacing: 0; font-style: italic; }
+h3 span { font-size: 19px; margin-left: 6px; }
+[id] { scroll-margin-top: 80px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--sida); }
+.visuellt-dold { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hoppa { position: absolute; left: -999px; top: 8px; z-index: 30; background: var(--kort); padding: 8px 14px; }
+.hoppa:focus { left: 8px; }
+:focus-visible { outline: 3px solid var(--guld); outline-offset: 3px; }
+.overrad { font-size: 15px; text-transform: uppercase; letter-spacing: .14em; color: var(--guld-text); font-weight: 600; }
+
+/* 3. Knappar */
+.knapp { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border: 1px solid var(--oliv); border-radius: 0; background: var(--oliv); color: #fff; font: 600 17px/1 var(--f); text-transform: uppercase; letter-spacing: .1em; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background .2s, color .2s; }
+.knapp:hover { background: var(--oliv-mork); }
+.knapp-guld { background: var(--guld); border-color: var(--guld); color: var(--natt); }
+.knapp-guld:hover { background: #dbb978; }
+.knapp-ljus { background: transparent; border-color: currentColor; color: inherit; }
+.knapp-ljus:hover { background: rgb(255 255 255 / .1); }
+
+/* 4. Sidhuvud */
+.topp { position: sticky; top: 0; z-index: 20; background: var(--natt); color: #f1ead9; border-bottom: 1px solid #2e3a2f; }
+.topp .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+.topp-logo img { width: 104px; }
+.topp nav { display: flex; gap: 24px; margin-left: auto; font-size: 17px; }
+.topp nav a { text-decoration: none; }
+.topp nav a:hover { color: var(--guld); }
+.topp .knapp { min-height: 40px; padding: 0 16px; font-size: 15px; background: var(--guld); border-color: var(--guld); color: var(--natt); }
+
+/* 5. Toppen med film */
+.hero { position: relative; min-height: min(86vh, 760px); display: grid; align-items: end; color: #f4eedf; background: var(--natt); overflow: hidden; }
+.hero video, .hero-bild, .hero-bild img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero video { z-index: 1; opacity: 0; transition: opacity .6s; }
+.hero video.spelar { opacity: 1; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgb(21 27 22 / .25) 0%, rgb(21 27 22 / .55) 45%, rgb(21 27 22 / .92) 100%); }
+.hero-text { position: relative; z-index: 3; width: 100%; padding-top: 120px; padding-bottom: clamp(40px, 7vw, 80px); }
+.hero h1 img { width: clamp(240px, 34vw, 400px); }
+.ingress { font-size: clamp(24px, 3vw, 32px); font-style: italic; margin-top: 18px; max-width: 26ch; line-height: 1.2; }
+.status { margin-top: 18px; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+.status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--guld); }
+.status.oppet::before { background: #7fbf86; }
+.knappar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.ring { margin-top: 14px; font-size: 18px; }
+.ring a { color: var(--guld); }
+.paus { position: absolute; z-index: 4; right: var(--sida); bottom: 24px; width: 44px; height: 44px; border: 1px solid rgb(255 255 255 / .5); border-radius: 50%; background: rgb(21 27 22 / .5); cursor: pointer; }
+.paus::before, .paus::after { content: ""; position: absolute; top: 14px; width: 4px; height: 14px; background: #fff; }
+.paus::before { left: 15px; } .paus::after { right: 15px; }
+.paus[aria-pressed="true"]::before { left: 17px; width: 0; height: 0; background: none; border-left: 12px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.paus[aria-pressed="true"]::after { display: none; }
+
+/* 6. Söndag */
+.sondag { padding: clamp(56px, 8vw, 96px) 0; }
+.sondag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.sondag-kort { background: var(--kort); border: 1px solid var(--linje); padding: clamp(28px, 4vw, 48px); text-align: center; }
+.sondag-kort h2 { margin-top: 8px; }
+.sondag-pris { font-size: 22px; margin-top: 10px; }
+.sondag-pris span { color: var(--guld-text); font-weight: 600; }
+.sondag-ratter { list-style: none; padding: 0; margin: 22px 0 26px; display: grid; gap: 14px; font-size: 21px; }
+.sondag-ratter small { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: var(--dampad); }
+.sondag-grid picture img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* 7. Meny */
+.meny { padding: clamp(56px, 8vw, 96px) 0; background: var(--kort); border-top: 1px solid var(--linje); border-bottom: 1px solid var(--linje); }
+.meny-titel { text-align: center; text-transform: uppercase; letter-spacing: .16em; font-weight: 400; font-size: clamp(48px, 7vw, 80px); }
+.meny-titel::after { content: ""; display: block; width: 160px; height: 1px; margin: 18px auto 0; background: var(--oliv); }
+.allergi { max-width: 60ch; margin: 24px auto 0; text-align: center; color: var(--dampad); font-size: 17px; }
+.allergi strong { color: var(--blck); }
+.flikar { position: sticky; top: 64px; z-index: 10; display: flex; gap: 8px; overflow-x: auto; margin: 28px calc(var(--sida) * -1) 0; padding: 12px var(--sida); background: var(--kort); border-bottom: 1px solid var(--linje); scrollbar-width: none; }
+.flikar::-webkit-scrollbar { display: none; }
+.flikar a { flex: none; padding: 6px 14px; border: 1px solid var(--linje); text-decoration: none; font-size: 17px; white-space: nowrap; }
+.flikar a:hover { border-color: var(--oliv); color: var(--oliv); }
+.grupper { display: grid; grid-template-columns: 1fr 1fr; gap: 56px 72px; margin-top: 48px; }
+.grupp h3 { padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid var(--oliv); }
+.grupp-bred { grid-column: 1 / -1; }
+.ratt { padding: 14px 0; border-bottom: 1px solid var(--linje); }
+.ratt-huvud { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.ratt-huvud b { font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.pris { color: var(--guld-text); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ratt p { margin-top: 2px; }
+.en { color: var(--dampad); font-style: italic; font-size: 17px; }
+.set { margin-top: 24px; padding: 20px; text-align: center; border: 1px solid var(--oliv); outline: 1px solid var(--oliv); outline-offset: 4px; }
+.set-ratter { font-size: 20px; margin: 6px 0; }
+.lista { list-style: none; padding: 0; }
+.lista li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px dotted var(--linje); }
+.lista small { color: var(--dampad); font-size: 16px; font-style: italic; }
+.glas-flaska { color: var(--dampad); font-style: italic; font-size: 17px; }
+.vin-kolumner { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+.kallaren { margin-top: 20px; font-style: italic; }
+
+/* 8. Om oss */
+.om { padding: clamp(56px, 8vw, 96px) 0; }
+.om-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.om-text p { margin-top: 16px; max-width: 58ch; }
+.ingress-mork { font-size: 24px; font-style: italic; line-height: 1.3; color: var(--oliv); }
+.om-bild img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.galleri { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: 220px; gap: 12px; margin-top: clamp(40px, 6vw, 72px); }
+.galleri picture:first-child { grid-row: span 2; }
+.galleri img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 9. Boka och hitta hit */
+.hitta { padding: clamp(56px, 8vw, 96px) 0; background: var(--natt); color: #efe8d8; }
+.hitta h2, .hitta h3 { color: var(--guld); }
+.hitta-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 5vw, 72px); }
+.hitta-grid > div > p { margin: 12px 0 22px; }
+.kontakt { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 12px; font-size: 22px; }
+.kontakt small { font-size: 17px; color: #bdb5a3; }
+.tider { border: 1px solid #3a463b; padding: clamp(24px, 3vw, 36px); align-self: start; }
+.tider dl { margin: 16px 0; }
+.tider dl div { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid #2e3a2f; }
+.tider dd { color: var(--guld); }
+
+footer { padding: 40px 0 48px; text-align: center; font-size: 17px; color: var(--dampad); }
+footer img { width: 140px; margin: 0 auto 14px; }
+
+/* 10. Mobilens fasta rad */
+.mobilrad { display: none; }
+
+@media (max-width: 860px) {
+  .topp nav { display: none; }
+  .topp .knapp { margin-left: auto; }
+  .sondag-grid, .om-grid, .hitta-grid, .grupper, .vin-kolumner { grid-template-columns: 1fr; }
+  .grupper { gap: 48px; }
+  .galleri { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+  .galleri picture:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .om-bild img { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 620px) {
+  body { font-size: 18px; padding-bottom: 76px; }
+  .topp .knapp { display: none; }
+  .hero { min-height: 82vh; }
+  .knappar .knapp { flex: 1; }
+  .mobilrad { display: flex; gap: 8px; position: fixed; z-index: 25; left: 0; right: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--natt); color: #f4eedf; box-shadow: 0 -6px 18px rgb(0 0 0 / .2); }
+  .mobilrad .knapp { flex: 1; }
+  .mobilrad .knapp-ljus { flex: 0 0 96px; }
+  .paus { bottom: auto; top: 16px; }
+}
