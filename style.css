@@ -114,7 +114,7 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 .sondag-grid > *, .grupper > *, .vin-kolumner > *, .om-grid > *, .galleri > *, .hitta-grid > * { min-width: 0; }
 .sondag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
 .sondag-kort { border-radius: var(--radie-kort); background: rgb(251 249 243 / .85); padding: clamp(28px, 4vw, 48px); }
-.sondag-kort h2 { margin-top: 6px; font-size: clamp(30px, 4vw, 44px); hyphens: auto; } /* avstavas hellre än att gå utanför kortet */
+.sondag-kort h2 { margin-top: 6px; font-size: clamp(30px, 4vw, 44px); }
 .sondag-pris { font-size: var(--s-brod); margin-top: 10px; }
 .sondag-pris span { color: var(--guld-text); }
 .sondag-ratter { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 12px; font-size: var(--s-brod); line-height: 1.3; }
