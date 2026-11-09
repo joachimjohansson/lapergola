@@ -29,8 +29,8 @@
 <link rel="preload" as="image" href="bilder/matsal-1600.avif" type="image/avif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=12">
 <script src="https://www.bokabord.se/widget.min.js" async></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
   <div class="wrap">
     <a class="topp-logo" href="#" aria-label="Pergola, till toppen"><img src="bilder/logo.png" alt="" width="480" height="195"></a>
     <nav aria-label="Huvudmeny"><a href="#meny">Meny</a><a href="#sondag">Söndag</a><a href="#om">Om oss</a><a href="#hitta">Hitta hit</a></nav>
-    <button class="waiteraid-widget knapp" data-hash="206074e566215a96386093ac5b81f60e">Boka bord</button>
+    <button class="waiteraid-widget knapp knapp-guld" data-hash="206074e566215a96386093ac5b81f60e">Boka bord</button>
   </div>
 </header>
 
@@ -50,14 +50,13 @@
     </video>
     <picture class="hero-bild"><source srcset="bilder/matsal-800.avif 800w, bilder/matsal-1600.avif 1600w" sizes="100vw" type="image/avif"><img src="bilder/matsal.jpg" alt="" width="1600" height="1089"></picture>
     <div class="wrap hero-text">
-      <h1 id="hero-rubrik"><img src="bilder/logo.png" alt="Pergola – Trattoria e vino" width="480" height="195"></h1>
-      <p class="ingress">Ett stycke Italien mitt i hjärtat av Göteborg.</p>
+      <h1 id="hero-rubrik" class="ingress"><span class="visuellt-dold">Pergola, trattoria e vino. </span>Ett stycke Italien mitt i hjärtat av Göteborg.</h1>
       <p class="status" id="status" role="status">Öppet alla dagar från kl. 16</p>
       <div class="knappar">
         <button class="waiteraid-widget knapp knapp-guld" data-hash="206074e566215a96386093ac5b81f60e">Boka bord</button>
         <a class="knapp knapp-ljus" href="#meny">Se menyn</a>
       </div>
-      <p class="ring">eller ring <a href="tel:+4631188980">031-18 89 80</a></p>
+      <p class="ring">Eller ring <a href="tel:+4631188980">031-18 89 80</a></p>
     </div>
     <button class="paus" type="button" aria-pressed="false"><span class="visuellt-dold">Pausa filmen</span></button>
   </section>
@@ -83,16 +82,16 @@
     <div class="wrap">
       <h2 id="meny-rubrik" class="meny-titel">Meny</h2>
       <p class="allergi"><strong>Allergi?</strong> Laktos- eller glutenintolerant? Fråga gärna personalen innan ni beställer. Vi anpassar gärna rätterna, och det finns vegetariska alternativ.</p>
-      <nav class="flikar" aria-label="Menyns delar">
+      <nav class="flikar" aria-label="Menyns delar"><div class="flikar-rad">
         <a href="#fore">Något före</a><a href="#antipasto">Antipasto</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#secondi">Secondi</a><a href="#dolci">Dolci</a><a href="#cafe">Café</a><a href="#vino">Vino</a><a href="#ol">Öl &amp; cider</a><a href="#alkoholfritt">Alkoholfritt</a>
-      </nav>
+      </div></nav>
 
       <div class="grupper">
         <div class="grupp" id="fore"><h3>Något före <span lang="en">To start with</span></h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Negroni</b><span class="pris">155 kr</span></div><p class="en" lang="en">gin, campari and sweet vermouth</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Negroni</b><span class="pris">155 kr</span></div><p class="en" lang="en">Gin, campari and sweet vermouth</p></div>
           <div class="ratt"><div class="ratt-huvud"><b>GT Italiano</b><span class="pris">155 kr</span></div><p class="en" lang="en">Malfy pink grape gin and Italian tonic</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Aperol Spritz</b><span class="pris">145 kr</span></div><p class="en" lang="en">aperol, prosecco, soda and orange</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Limoncello Spritz</b><span class="pris">145 kr</span></div><p class="en" lang="en">limoncello, prosecco, soda and lemon</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Aperol Spritz</b><span class="pris">145 kr</span></div><p class="en" lang="en">Aperol, prosecco, soda and orange</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Limoncello Spritz</b><span class="pris">145 kr</span></div><p class="en" lang="en">Limoncello, prosecco, soda and lemon</p></div>
           <div class="ratt"><div class="ratt-huvud"><b>Prosecco</b><span class="pris">115 kr</span></div></div>
           <div class="set">
             <p class="overrad">Set menu</p>
@@ -102,44 +101,44 @@
         </div>
 
         <div class="grupp" id="antipasto"><h3>Antipasto</h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Bruschetta Classica</b><span class="pris">125 kr</span></div><p>grillat lantbröd med tomat, rödlök, basilikaröra &amp; buffelmozzarella</p><p class="en" lang="en">grilled sourdough bread with tomato, red onion, basil &amp; mozzarella</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Gamberetto</b><span class="pris">145 kr</span></div><p>scampi i het sås med vitlök, chili &amp; örter</p><p class="en" lang="en">scampi in hot sauce with garlic &amp; chili</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Carpaccio</b><span class="pris">155 kr</span></div><p>tunna skivor kalv, citron, olivolja, parmesan, ruccola &amp; pinjenötter</p><p class="en" lang="en">thin slices of veal, lemon, olive oil, parmesan, arugula &amp; pine nuts</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Antipasto</b><span class="pris">275 kr</span></div><p>tre sorters chark, tre sorters ost &amp; oliver</p><p class="en" lang="en">Italian cold cuts &amp; cheeses, olives included</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Hummersoppa</b><span class="pris">145 kr</span></div><p>krämig hummersoppa med pilgrimsravioli</p><p class="en" lang="en">creamy lobster soup with scallop ravioli</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Oliver</b><span class="pris">55 kr</span></div><p class="en" lang="en">marinated olives</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Vitlöksbröd</b><span class="pris">65 kr</span></div><p class="en" lang="en">garlic bread</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Bruschetta Classica</b><span class="pris">125 kr</span></div><p>Grillat lantbröd med tomat, rödlök, basilikaröra &amp; buffelmozzarella</p><p class="en" lang="en">Grilled sourdough bread with tomato, red onion, basil &amp; mozzarella</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Gamberetto</b><span class="pris">145 kr</span></div><p>Scampi i het sås med vitlök, chili &amp; örter</p><p class="en" lang="en">Scampi in hot sauce with garlic &amp; chili</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Carpaccio</b><span class="pris">155 kr</span></div><p>Tunna skivor kalv, citron, olivolja, parmesan, ruccola &amp; pinjenötter</p><p class="en" lang="en">Thin slices of veal, lemon, olive oil, parmesan, arugula &amp; pine nuts</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Antipasto</b><span class="pris">275 kr</span></div><p>Tre sorters chark, tre sorters ost &amp; oliver</p><p class="en" lang="en">Italian cold cuts &amp; cheeses, olives included</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Hummersoppa</b><span class="pris">145 kr</span></div><p>Krämig hummersoppa med pilgrimsravioli</p><p class="en" lang="en">Creamy lobster soup with scallop ravioli</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Oliver</b><span class="pris">55 kr</span></div><p class="en" lang="en">Marinated olives</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Vitlöksbröd</b><span class="pris">65 kr</span></div><p class="en" lang="en">Garlic bread</p></div>
         </div>
 
         <div class="grupp" id="pasta"><h3>Pasta</h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Pollo e Chili</b><span class="pris">215 kr</span></div><p>linguine med kyckling, zucchini, rödlök, vitlök, chili, grädde, färska örter &amp; grana</p><p class="en" lang="en">linguine with chicken, zucchini, red onion, garlic, chili, cream, fresh herbs &amp; grana</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Carbonara</b><span class="pris">215 kr</span></div><p>linguine med bacon, svartpeppar, grädde, pecorino &amp; äggula</p><p class="en" lang="en">linguine with bacon, black pepper, cream, pecorino &amp; egg yolk</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Scampi</b><span class="pris">259 kr</span></div><p>linguine med scampi, chili, vitlök, örter &amp; tomat</p><p class="en" lang="en">linguine with scampi, chili, garlic, herbs &amp; tomato</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Vitello</b><span class="pris">259 kr</span></div><p>pappardelle med kalv &amp; skogschampinjoner i en krämig cognacsås</p><p class="en" lang="en">pappardelle with veal &amp; mushrooms in a creamy cognac sauce</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Gorgonzola</b><span class="pris">259 kr</span></div><p>rigatoni med oxfilé, skogschampinjon, rödlök &amp; gorgonzolasås</p><p class="en" lang="en">rigatoni with fillet of beef, mushrooms, red onion &amp; gorgonzola sauce</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Ravioli Anna Maria</b><span class="pris">259 kr</span></div><p>kronärtskocksfylld hemgjord ravioli med tomat och mozzarella</p><p class="en" lang="en">home made ravioli with artichoke, tomato &amp; mozzarella</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Extra parmesan</b><span class="pris">20 kr</span></div><p class="en" lang="en">bowl of parmesan</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Pollo e Chili</b><span class="pris">215 kr</span></div><p>Linguine med kyckling, zucchini, rödlök, vitlök, chili, grädde, färska örter &amp; grana</p><p class="en" lang="en">Linguine with chicken, zucchini, red onion, garlic, chili, cream, fresh herbs &amp; grana</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Carbonara</b><span class="pris">215 kr</span></div><p>Linguine med bacon, svartpeppar, grädde, pecorino &amp; äggula</p><p class="en" lang="en">Linguine with bacon, black pepper, cream, pecorino &amp; egg yolk</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Scampi</b><span class="pris">259 kr</span></div><p>Linguine med scampi, chili, vitlök, örter &amp; tomat</p><p class="en" lang="en">Linguine with scampi, chili, garlic, herbs &amp; tomato</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Vitello</b><span class="pris">259 kr</span></div><p>Pappardelle med kalv &amp; skogschampinjoner i en krämig cognacsås</p><p class="en" lang="en">Pappardelle with veal &amp; mushrooms in a creamy cognac sauce</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Gorgonzola</b><span class="pris">259 kr</span></div><p>Rigatoni med oxfilé, skogschampinjon, rödlök &amp; gorgonzolasås</p><p class="en" lang="en">Rigatoni with fillet of beef, mushrooms, red onion &amp; gorgonzola sauce</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Ravioli Anna Maria</b><span class="pris">259 kr</span></div><p>Kronärtskocksfylld hemgjord ravioli med tomat och mozzarella</p><p class="en" lang="en">Home made ravioli with artichoke, tomato &amp; mozzarella</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Extra parmesan</b><span class="pris">20 kr</span></div><p class="en" lang="en">Bowl of parmesan</p></div>
         </div>
 
         <div class="grupp" id="pizza"><h3>Pizza</h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Margherita</b><span class="pris">215 kr</span></div><p>tomat, basilika, olivolja, toppad med buffelmozzarella</p><p class="en" lang="en">tomato, basil, olive oil and buffalo mozzarella</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Prosciutto</b><span class="pris">215 kr</span></div><p>tomat, mozzarella, pesto, ruccola &amp; prosciutto</p><p class="en" lang="en">tomato, mozzarella, pesto, arugula &amp; prosciutto</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Diavola</b><span class="pris">215 kr</span></div><p>tomat, mozzarella, rödlök &amp; salame piccante</p><p class="en" lang="en">tomato, mozzarella, red onion &amp; spicy salami</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Chi Chi</b><span class="pris">215 kr</span></div><p>tomat, mozzarella, champinjoner, bacon &amp; gorgonzola</p><p class="en" lang="en">tomato, mozzarella, mushrooms, bacon &amp; gorgonzola</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Pinsa Burrata</b><span class="pris">229 kr</span></div><p>romersk lyxpizza med solkyssta tomater, mozzarella &amp; burrata</p><p class="en" lang="en">Roman luxury pizza with sun-kissed tomatoes, mozzarella &amp; burrata</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Margherita</b><span class="pris">215 kr</span></div><p>Tomat, basilika, olivolja, toppad med buffelmozzarella</p><p class="en" lang="en">Tomato, basil, olive oil and buffalo mozzarella</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Prosciutto</b><span class="pris">215 kr</span></div><p>Tomat, mozzarella, pesto, ruccola &amp; prosciutto</p><p class="en" lang="en">Tomato, mozzarella, pesto, arugula &amp; prosciutto</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Diavola</b><span class="pris">215 kr</span></div><p>Tomat, mozzarella, rödlök &amp; salame piccante</p><p class="en" lang="en">Tomato, mozzarella, red onion &amp; spicy salami</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Chi Chi</b><span class="pris">215 kr</span></div><p>Tomat, mozzarella, champinjoner, bacon &amp; gorgonzola</p><p class="en" lang="en">Tomato, mozzarella, mushrooms, bacon &amp; gorgonzola</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Pinsa Burrata</b><span class="pris">229 kr</span></div><p>Romersk lyxpizza med solkyssta tomater, mozzarella &amp; burrata</p><p class="en" lang="en">Roman luxury pizza with sun-kissed tomatoes, mozzarella &amp; burrata</p></div>
         </div>
 
         <div class="grupp" id="secondi"><h3>Secondi</h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Selvatica</b><span class="pris">295 kr</span></div><p>grillad vildand, kantarellrisotto &amp; viltsky</p><p class="en" lang="en">grilled duck breast, chanterelle risotto and red wine sauce</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Brasato</b><span class="pris">295 kr</span></div><p>nattbakad oxkind, potatispuré, rödvinssås, svamp &amp; bacon</p><p class="en" lang="en">overnight baked cheek of beef, purée of potato, red wine sauce, mushroom &amp; bacon</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Salmone</b><span class="pris">295 kr</span></div><p>smörstekt laxfilé, grönsaker, potatis &amp; parmesansås</p><p class="en" lang="en">butter fried salmon, vegetables, potatoes &amp; parmesan sauce</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Selvatica</b><span class="pris">295 kr</span></div><p>Grillad vildand, kantarellrisotto &amp; viltsky</p><p class="en" lang="en">Grilled duck breast, chanterelle risotto and red wine sauce</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Brasato</b><span class="pris">295 kr</span></div><p>Nattbakad oxkind, potatispuré, rödvinssås, svamp &amp; bacon</p><p class="en" lang="en">Overnight baked cheek of beef, purée of potato, red wine sauce, mushroom &amp; bacon</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Salmone</b><span class="pris">295 kr</span></div><p>Smörstekt laxfilé, grönsaker, potatis &amp; parmesansås</p><p class="en" lang="en">Butter fried salmon, vegetables, potatoes &amp; parmesan sauce</p></div>
         </div>
 
         <div class="grupp" id="dolci"><h3>Dolci</h3>
-          <div class="ratt"><div class="ratt-huvud"><b>Tiramisu</b><span class="pris">115 kr</span></div><p>klassisk tiramisu med mascarpone &amp; marsala</p><p class="en" lang="en">classic tiramisu with mascarpone &amp; marsala</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Sorbetto</b><span class="pris">115 kr</span></div><p>fräsch citronsorbet med honung &amp; bär</p><p class="en" lang="en">fresh sorbet with honey &amp; berries</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Cioccolatino</b><span class="pris">45 kr</span></div><p>chokladtryffel</p><p class="en" lang="en">chocolate truffle</p></div>
-          <div class="ratt"><div class="ratt-huvud"><b>Pannacotta</b><span class="pris">115 kr</span></div><p>vit choklad-pannacotta med hallon</p><p class="en" lang="en">white chocolate pannacotta with raspberries</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Tiramisu</b><span class="pris">115 kr</span></div><p>Klassisk tiramisu med mascarpone &amp; marsala</p><p class="en" lang="en">Classic tiramisu with mascarpone &amp; marsala</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Sorbetto</b><span class="pris">115 kr</span></div><p>Fräsch citronsorbet med honung &amp; bär</p><p class="en" lang="en">Fresh sorbet with honey &amp; berries</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Cioccolatino</b><span class="pris">45 kr</span></div><p>Chokladtryffel</p><p class="en" lang="en">Chocolate truffle</p></div>
+          <div class="ratt"><div class="ratt-huvud"><b>Pannacotta</b><span class="pris">115 kr</span></div><p>Vit choklad-pannacotta med hallon</p><p class="en" lang="en">White chocolate pannacotta with raspberries</p></div>
         </div>
 
         <div class="grupp" id="cafe"><h3>Café</h3>
@@ -153,7 +152,7 @@
         </div>
 
         <div class="grupp grupp-bred" id="vino"><h3>Vino</h3>
-          <p class="glas-flaska">Pris per glas / flaska</p>
+          <p class="glas-flaska">Glas / flaska</p>
           <div class="vin-kolumner">
             <div>
               <h4>Mousserande</h4>
@@ -194,8 +193,8 @@
         <div class="grupp" id="ol"><h3>Öl &amp; cider</h3>
           <h4>Fatöl <span lang="en">Draught beer</span></h4>
           <ul class="lista">
-            <li><span>Gränges 40 cl <small>svensk</small></span><span class="pris">89 kr</span></li>
-            <li><span>Menabrea 40 cl <small>italiensk</small></span><span class="pris">99 kr</span></li>
+            <li><span>Gränges 40 cl <small>Svensk</small></span><span class="pris">89 kr</span></li>
+            <li><span>Menabrea 40 cl <small>Italiensk</small></span><span class="pris">99 kr</span></li>
           </ul>
           <h4>Flasköl <span lang="en">Bottled beer</span></h4>
           <ul class="lista">
@@ -265,8 +264,8 @@
         <!-- Stängda dagar (helgdagar, semester): skriv datumen i data-closed ovan, t.ex. data-closed="2026-12-24, 2026-12-25" -->
         <h3>Öppettider</h3>
         <dl>
-          <div><dt>Måndag – fredag</dt><dd>från kl. 16</dd></div>
-          <div><dt>Lördag – söndag</dt><dd>från kl. 16</dd></div>
+          <div><dt>Måndag – fredag</dt><dd>Från kl. 16</dd></div>
+          <div><dt>Lördag – söndag</dt><dd>Från kl. 16</dd></div>
         </dl>
         <p>Välkommen!</p>
       </div>
@@ -287,6 +286,51 @@
 </div>
 
 <script src="oppet.js"></script>
+<script>
+  const flikrad = document.querySelector(".flikar-rad");
+  const flikkanter = () => {
+    flikrad.classList.toggle("mer-v", flikrad.scrollLeft > 2);
+    flikrad.classList.toggle("mer-h", flikrad.scrollLeft + flikrad.clientWidth < flikrad.scrollWidth - 2);
+  };
+  flikrad.addEventListener("scroll", flikkanter, { passive: true });
+  addEventListener("resize", flikkanter);
+  flikkanter();
+
+  // följ scrollningen: markera delen man läser och skjut fram dess flik i raden
+  const flikar = [...flikrad.querySelectorAll("a")];
+  const delar = flikar.map(a => document.querySelector(a.getAttribute("href")));
+  const lugn = matchMedia("(prefers-reduced-motion: reduce)");
+  let aktiv = null, vantar = false, vald = -1;
+  flikar.forEach((a, n) => a.addEventListener("click", () => { vald = n; }));
+  for (const t of ["wheel", "touchstart", "keydown"]) addEventListener(t, () => { vald = -1; }, { passive: true });
+  const folj = () => {
+    vantar = false;
+    // i två spalter: delen som korsar läslinjen vinner, annars den senast passerade
+    let i = -1, mitt = -1;
+    delar.forEach((d, n) => {
+      const r = d.getBoundingClientRect();
+      if (r.top <= 170) i = n;
+      if (mitt < 0 && r.top <= 170 && r.bottom > 170) mitt = n;
+    });
+    if (mitt >= 0) i = mitt;
+    if (vald >= 0) i = vald; // en klickad flik gäller tills man scrollar själv
+    const a = flikar[i] || null;
+    if (a === aktiv) return;
+    if (aktiv) aktiv.removeAttribute("aria-current");
+    aktiv = a;
+    if (!a) return;
+    a.setAttribute("aria-current", "true");
+    const x = a.getBoundingClientRect().left - flikrad.getBoundingClientRect().left + flikrad.scrollLeft;
+    flikrad.scrollTo({ left: x - (flikrad.clientWidth - a.offsetWidth) / 2, behavior: lugn.matches ? "auto" : "smooth" });
+  };
+  addEventListener("scroll", () => { if (!vantar) { vantar = true; requestAnimationFrame(folj); } }, { passive: true });
+  folj();
+
+  // mobilraden visas först när toppens knappar har scrollats ur bild
+  const mobilrad = document.querySelector(".mobilrad");
+  new IntersectionObserver(([e]) => mobilrad.classList.toggle("undan", e.isIntersecting))
+    .observe(document.querySelector(".hero .knappar"));
+</script>
 <script>
 // Öppetstatus i toppen och söndagsmarkering, utan stängningstid (den finns inte på originalsajten)
 const tider = document.querySelector(".tider");

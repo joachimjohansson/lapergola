@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "style.css"
+        ],
+        "createdAt": "2026-11-09T00:09:47.463Z",
+        "reason": "Claude: rad 89 är pausknappens play-triangel ritad med border, ingen kortkant"
+      }
+    ]
+  }
+}
