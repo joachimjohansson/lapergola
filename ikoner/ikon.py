@@ -39,26 +39,43 @@ for k, t in enumerate([0.10, 0.22, 0.34, 0.46, 0.58, 0.70, 0.82, 0.93]):
 blads.append((blad(P2, math.atan2(P2[1]-P1[1], P2[0]-P1[0]), 56, 34), BLAD[1]))
 oliver = [((372, 300), 17), ((108, 380), 15)]
 
-# P:et: stam + skål med hål (ritas med jämn-udda fyllning)
-def p_former():
-    yt, yb, xl, xs = 92, 420, 150, 228      # topp, botten, vänster, stamkant
-    r_ut, r_in = 104, 46
-    cy = yt + r_ut                          # skålens mitt
-    xc = 286                                # skålens rundning börjar här
-    ytter = [(xl, yt), (xc, yt)]
-    ytter += [(xc + r_ut*math.cos(a), cy + r_ut*math.sin(a)) for a in [-math.pi/2 + math.pi*i/48 for i in range(49)]]
-    ytter += [(xs, cy + r_ut), (xs, yb), (xl, yb)]
-    hal = [(xs, cy - r_in), (xc, cy - r_in)]
-    hal += [(xc + r_in*math.cos(a), cy + r_in*math.sin(a)) for a in [-math.pi/2 + math.pi*i/32 for i in range(33)]]
-    hal += [(xs, cy + r_in)]
-    return ytter, hal
+# P:et från vektorloggan (original/logo-vektor/pergola-ordbild.svg): de två konturerna längst till vänster
+import re
+ORD = Path(__file__).resolve().parent.parent / "original" / "logo-vektor" / "pergola-ordbild.svg"
+_d = re.search(r'<path d="([^"]+)" fill="#84744e" fill-rule="evenodd"', ORD.read_text(encoding="utf-8")).group(1)
+_del = re.findall(r"M[^M]*", _d)
+def _bbox(sp):
+    n = list(map(float, re.findall(r"-?[\d.]+", sp))); return min(n[0::2]), max(n[0::2]), min(n[1::2]), max(n[1::2])
+P_DEL = [sp for sp in _del if _bbox(sp)[0] < 100 and _bbox(sp)[1] < 97]   # P:ets ytterkontur och hål
+assert len(P_DEL) == 2, f"hittade {len(P_DEL)} konturer för P"
+_x0 = min(_bbox(sp)[0] for sp in P_DEL); _x1 = max(_bbox(sp)[1] for sp in P_DEL)
+_y0 = min(_bbox(sp)[2] for sp in P_DEL); _y1 = max(_bbox(sp)[3] for sp in P_DEL)
+P_SKALA = 340 / (_x1 - _x0)
+P_TX = 256 - (_x0 + _x1) / 2 * P_SKALA
+P_TY = 256 - (_y0 + _y1) / 2 * P_SKALA
+P_D = "".join(P_DEL)
 
-ytter, hal = p_former()
-# P:et något mindre och centrerat, så att kvisten syns runt om
-_xs = [x for x, _ in ytter]; _ys = [y for _, y in ytter]
-_mx, _my = (min(_xs) + max(_xs)) / 2, (min(_ys) + max(_ys)) / 2
-_skala = lambda pts: [(256 + (x - _mx) * .86, 256 + (y - _my) * .86) for x, y in pts]
-ytter, hal = _skala(ytter), _skala(hal)
+def p_polygoner():
+    """P:ets konturer som punktlistor i ikonens koordinater (kurvor uppdelade i 16 steg)."""
+    polys = []
+    for sp in P_DEL:
+        tok = re.findall(r"[MLCZ]|-?[\d.]+", sp); i = 0; pts = []
+        def num():
+            nonlocal i; v = float(tok[i]); i += 1; return v
+        cmd = None
+        while i < len(tok):
+            if tok[i] in "MLCZ": cmd = tok[i]; i += 1
+            if cmd == "Z": break
+            if cmd in "ML": pts.append((num(), num()))
+            elif cmd == "C":
+                c1 = (num(), num()); c2 = (num(), num()); e = (num(), num()); p0 = pts[-1]
+                for k in range(1, 17):
+                    u = k / 16; w = 1 - u
+                    pts.append(tuple(w**3*p0[j] + 3*w*w*u*c1[j] + 3*w*u*u*c2[j] + u**3*e[j] for j in (0, 1)))
+        polys.append([(x * P_SKALA + P_TX, y * P_SKALA + P_TY) for x, y in pts])
+    return polys
+
+ytter, hal = sorted(p_polygoner(), key=len, reverse=True)   # ytterkonturen har flest punkter
 
 def svg():
     f = lambda pts: "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in pts) + " Z"
@@ -66,7 +83,7 @@ def svg():
              f'<path d="M{" L".join(f"{x:.1f} {y:.1f}" for x, y in stjalk)}" fill="none" stroke="{BLAD[2]}" stroke-width="9" stroke-linecap="round"/>']
     delar += [f'<path d="{f(p)}" fill="{c}"/>' for p, c in blads]
     delar += [f'<circle cx="{x}" cy="{y}" r="{r}" fill="{OLIV}"/>' for (x, y), r in oliver]
-    delar.append(f'<path d="{f(ytter)} {f(hal)}" fill="{GULD}" fill-rule="evenodd" stroke="{BG}" stroke-width="14" paint-order="stroke"/>')
+    delar.append(f'<path d="{P_D}" transform="translate({P_TX:.2f} {P_TY:.2f}) scale({P_SKALA:.4f})" fill="{GULD}" fill-rule="evenodd" stroke="{BG}" stroke-width="{14 / P_SKALA:.3f}" paint-order="stroke"/>')
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {S} {S}">' + "".join(delar) + "</svg>\n"
 
 def raster(storlek=2048):
@@ -92,7 +109,7 @@ def raster(storlek=2048):
     im.paste(GULD, mask=mask)
     return im
 
-assert len(ytter) > 50 and len(hal) > 30 and len(blads) == 9  # självtest av geometrin
+assert len(ytter) > len(hal) > 8 and len(blads) == 9  # självtest av geometrin
 UT.mkdir(parents=True, exist_ok=True)
 (UT / "favicon.svg").write_text(svg(), encoding="utf-8")
 stor = raster()

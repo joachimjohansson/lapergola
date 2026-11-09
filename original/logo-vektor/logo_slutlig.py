@@ -3,7 +3,7 @@
 - PERGOLA spårad med potrace, sedan uträtad: nästan raka kurvor blir linjer, nästan vågräta/lodräta
   kanter rätas upp och kanter vid versalhöjd/baslinje läggs exakt på linjen
 - TRATTORIA E VINO från undertext.json (Century Gothic, bokstav för bokstav på originalets platser)
-Kör: PYTHONPATH=<pylib> python logo_slutlig.py <logo.png> <undertext.json> <ut-mapp>"""
+Kör idealisera.py först (skriver ordbild-geometri.json), sedan: PYTHONPATH=<pylib> python logo_slutlig.py <logo.png> <undertext.json> <ut-mapp>"""
 import sys, json
 from pathlib import Path
 import numpy as np
@@ -93,6 +93,10 @@ def d_av(start, rad):
 
 putsade = [putsa(s, segs) for s, segs in kurvor]
 pergola_d = "".join(d_av(s, rad) for s, rad, _ in putsade)
+# Finns den geometriska ombyggnaden (idealisera.py: vassa hörn, släta kurvor) används den i stället
+_geo = Path(__file__).with_name("ordbild-geometri.json")
+if _geo.exists():
+    pergola_d = json.loads(_geo.read_text(encoding="utf-8"))["d"]
 under = json.loads(UNDER.read_text(encoding="utf-8"))
 under_d = under["d"]
 
