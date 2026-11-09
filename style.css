@@ -62,7 +62,7 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 /* 4. Sidhuvud */
 .topp { position: sticky; top: 0; z-index: 20; background: var(--natt); color: #f1ead9; }
 .topp .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
-.topp-logo img { width: 104px; }
+.topp-logo img { width: 180px; }
 .topp nav { display: flex; gap: 24px; margin-left: auto; }
 .topp nav a { text-decoration: none; }
 .topp nav a:hover { color: var(--guld); }
@@ -182,7 +182,7 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 .tider dd { color: var(--guld); }
 
 footer { padding: 40px 0 48px; font-size: var(--s-liten); color: var(--dampad); }
-footer img { width: 140px; margin-bottom: 14px; }
+footer img { width: 220px; margin-bottom: 18px; }
 .ring a { padding: 14px 0; } /* större klickyta utan att flytta texten */
 .fot-rader > * { display: block; width: fit-content; padding: 11px 0; } /* en rad var, länkarna minst 44 px höga */
 
@@ -202,6 +202,7 @@ footer img { width: 140px; margin-bottom: 14px; }
   :root { --s-h3: 30px; --s-ratt: 22px; --s-brod: 17px; }
   body { padding-bottom: 76px; }
   .topp .knapp { display: none; }
+  .topp .wrap { justify-content: center; } /* bara loggan kvar i mobilen */
   .hero { min-height: 82vh; }
   .mobilrad { display: flex; gap: 8px; position: fixed; z-index: 25; left: 0; right: 0; bottom: 0; padding: 10px 24px calc(10px + env(safe-area-inset-bottom)); background: var(--natt); color: #f4eedf; box-shadow: 0 -6px 18px rgb(0 0 0 / .2); }
   .mobilrad .knapp { flex: 1; justify-content: center; }
