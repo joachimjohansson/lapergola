@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=16">
 <script src="https://www.bokabord.se/widget.min.js" async></script>
 </head>
 <body>
@@ -83,7 +83,7 @@
       <h2 id="meny-rubrik" class="meny-titel">Meny</h2>
       <p class="allergi"><strong>Allergi?</strong> Laktos- eller glutenintolerant? Fråga gärna personalen innan ni beställer. Vi anpassar gärna rätterna, och det finns vegetariska alternativ.</p>
       <nav class="flikar" aria-label="Menyns delar"><div class="flikar-rad">
-        <a href="#fore">Något före</a><a href="#antipasto">Antipasto</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#secondi">Secondi</a><a href="#dolci">Dolci</a><a href="#cafe">Café</a><a href="#vino">Vino</a><a href="#ol">Öl &amp; cider</a><a href="#alkoholfritt">Alkoholfritt</a>
+        <a href="#fore">Aperitivo</a><a href="#antipasto">Antipasto</a><a href="#pasta">Pasta</a><a href="#pizza">Pizza</a><a href="#secondi">Secondi</a><a href="#dolci">Dolci</a><a href="#cafe">Caffè</a><a href="#vino">Vino</a><a href="#ol">Birra &amp; sidro</a><a href="#alkoholfritt">Analcolici</a>
       </div></nav>
 
       <div class="grupper">
@@ -95,7 +95,7 @@
           <div class="ratt"><div class="ratt-huvud"><b>Prosecco</b><span class="pris">115 kr</span></div></div>
           <div class="set">
             <p class="overrad">Set menu</p>
-            <p class="set-ratter">Bruschetta · Pasta, kockens val · Selvatica · Tiramisu</p>
+            <p class="set-ratter">Bruschetta<br>Pasta, kockens val<br>Selvatica<br>Tiramisu</p>
             <p class="pris">495 kr</p>
           </div>
         </div>
@@ -141,7 +141,7 @@
           <div class="ratt"><div class="ratt-huvud"><b>Pannacotta</b><span class="pris">115 kr</span></div><p>Vit choklad-pannacotta med hallon</p><p class="en" lang="en">White chocolate pannacotta with raspberries</p></div>
         </div>
 
-        <div class="grupp" id="cafe"><h3>Café</h3>
+        <div class="grupp" id="cafe"><h3>Caffè</h3>
           <ul class="lista">
             <li><span>Cappuccino</span><span class="pris">39 kr</span></li>
             <li><span>Bryggkaffe</span><span class="pris">34 kr</span></li>
@@ -155,14 +155,14 @@
           <p class="glas-flaska">Glas / flaska</p>
           <div class="vin-kolumner">
             <div>
-              <h4>Mousserande</h4>
+              <h4>Mousserande <span lang="en">Sparkling</span></h4>
               <ul class="lista">
                 <li><span>Prosecco</span><span class="pris">115 / 425 kr</span></li>
                 <li><span>Champagne</span><span class="pris">895 kr</span></li>
               </ul>
               <h4>Vitt <span lang="en">White</span></h4>
               <ul class="lista">
-                <li><span>Husets vita</span><span class="pris">125 / 475 kr</span></li>
+                <li><span>Husets vita <small lang="en">House white</small></span><span class="pris">125 / 475 kr</span></li>
                 <li><span>Pinot Grigio Puittano</span><span class="pris">135 / 555 kr</span></li>
                 <li><span>Chardonnay Lavis</span><span class="pris">140 / 575 kr</span></li>
                 <li><span>Riesling Lavis</span><span class="pris">155 / 625 kr</span></li>
@@ -172,7 +172,7 @@
             <div>
               <h4>Rött <span lang="en">Red</span></h4>
               <ul class="lista">
-                <li><span>Husets röda</span><span class="pris">125 / 475 kr</span></li>
+                <li><span>Husets röda <small lang="en">House red</small></span><span class="pris">125 / 475 kr</span></li>
                 <li><span>Valpolicella Farina</span><span class="pris">140 / 575 kr</span></li>
                 <li><span>Ripasso Cantina Negrar</span><span class="pris">145 / 595 kr</span></li>
                 <li><span>Chianti Piccini</span><span class="pris">145 / 595 kr</span></li>
@@ -187,10 +187,11 @@
               </ul>
             </div>
           </div>
-          <p class="kallaren">Fråga oss gärna om fler goda viner från källaren!</p>
+          <p class="kallaren">Fråga oss gärna om fler goda viner från källaren.</p>
+          <p class="en" lang="en">Ask us about more fine wines from the cellar.</p>
         </div>
 
-        <div class="grupp" id="ol"><h3>Öl &amp; cider</h3>
+        <div class="grupp" id="ol"><h3>Öl &amp; cider <span lang="en">Beer &amp; cider</span></h3>
           <h4>Fatöl <span lang="en">Draught beer</span></h4>
           <ul class="lista">
             <li><span>Gränges 40 cl <small>Svensk</small></span><span class="pris">89 kr</span></li>
@@ -211,7 +212,7 @@
           </ul>
         </div>
 
-        <div class="grupp" id="alkoholfritt"><h3>Alkoholfritt</h3>
+        <div class="grupp" id="alkoholfritt"><h3>Alkoholfritt <span lang="en">Non-alcoholic</span></h3>
           <ul class="lista">
             <li><span>Läsk <small>Cola, Cola Zero, Fanta, Sprite</small></span><span class="pris">55 kr</span></li>
             <li><span>Limonata</span><span class="pris">65 kr</span></li>
@@ -276,7 +277,7 @@
 <footer>
   <div class="wrap">
     <img src="bilder/logo.png" alt="Pergola – Trattoria e vino" width="480" height="195" loading="lazy">
-    <p>Södra Vägen 26, Göteborg · <a href="tel:+4631188980">031-18 89 80</a> · <a href="mailto:info@lapergola.se">info@lapergola.se</a></p>
+    <p class="fot-rader"><span>Södra Vägen 26, Göteborg</span><a href="tel:+4631188980">031-18 89 80</a><a href="mailto:info@lapergola.se">info@lapergola.se</a></p>
   </div>
 </footer>
 
@@ -328,8 +329,13 @@
 
   // mobilraden visas först när toppens knappar har scrollats ur bild
   const mobilrad = document.querySelector(".mobilrad");
-  new IntersectionObserver(([e]) => mobilrad.classList.toggle("undan", e.isIntersecting))
-    .observe(document.querySelector(".hero .knappar"));
+  // och göms igen i Boka bord-delen, som har egna knappar
+  const synliga = new Set();
+  const radvakt = new IntersectionObserver(poster => {
+    for (const e of poster) e.isIntersecting ? synliga.add(e.target) : synliga.delete(e.target);
+    mobilrad.classList.toggle("undan", synliga.size > 0);
+  });
+  for (const el of document.querySelectorAll(".hero .knappar, #hitta, footer")) radvakt.observe(el);
 </script>
 <script>
 // Öppetstatus i toppen och söndagsmarkering, utan stängningstid (den finns inte på originalsajten)

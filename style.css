@@ -110,6 +110,8 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 
 /* 7. Söndag */
 .sondag { padding: clamp(64px, 9vw, 110px) 0; }
+/* Safari kan låta en bild med width:100% trycka ut sin rutnätskolumn till bildens fulla bredd */
+.sondag-grid > *, .grupper > *, .vin-kolumner > *, .om-grid > *, .galleri > *, .hitta-grid > * { min-width: 0; }
 .sondag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
 .sondag-kort { border-radius: var(--radie-kort); background: rgb(251 249 243 / .85); padding: clamp(28px, 4vw, 48px); }
 .sondag-kort h2 { margin-top: 6px; }
@@ -170,8 +172,9 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 .hitta h2, .hitta h3 { color: var(--guld); }
 .hitta-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 5vw, 72px); }
 .hitta-grid > div > p { margin: 12px 0 22px; }
-.kontakt { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 2px; font-size: var(--s-ratt); }
-.kontakt a { display: inline-block; padding: 7px 0; } /* klickyta minst 44 px */
+.kontakt { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 0; font-size: var(--s-brod); }
+.kontakt a { display: inline-block; padding: 10px 0; text-decoration: none; } /* klickyta minst 44 px */
+.kontakt a:hover { color: var(--guld); }
 .kontakt small { font-size: var(--s-liten); color: #bdb5a3; }
 .tider { border-radius: var(--radie-kort); background: #1e2620; padding: clamp(28px, 4vw, 40px); align-self: start; }
 .tider dl { margin: 16px 0; }
@@ -180,7 +183,8 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 
 footer { padding: 40px 0 48px; font-size: var(--s-liten); color: var(--dampad); }
 footer img { width: 140px; margin-bottom: 14px; }
-footer a, .ring a { padding: 14px 0; } /* större klickyta utan att flytta texten */
+.ring a { padding: 14px 0; } /* större klickyta utan att flytta texten */
+.fot-rader > * { display: block; width: fit-content; padding: 11px 0; } /* en rad var, länkarna minst 44 px höga */
 
 /* 11. Mobilens fasta rad */
 .mobilrad { display: none; }
