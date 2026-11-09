@@ -15,7 +15,7 @@
   --s-h2: clamp(40px, 5vw, 56px);
   --s-h3: 34px;
   --s-ratt: 24px;
-  --s-brod: 19px;
+  --s-brod: 18px;
   --s-liten: 16px;
   --wrap: 1180px;
   --sida: clamp(24px, 5vw, 48px);
@@ -114,10 +114,10 @@ h3 span, h4 span { color: var(--dampad); font-style: italic; font-size: var(--s-
 .sondag-grid > *, .grupper > *, .vin-kolumner > *, .om-grid > *, .galleri > *, .hitta-grid > * { min-width: 0; }
 .sondag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
 .sondag-kort { border-radius: var(--radie-kort); background: rgb(251 249 243 / .85); padding: clamp(28px, 4vw, 48px); }
-.sondag-kort h2 { margin-top: 6px; }
-.sondag-pris { font-size: var(--s-ratt); margin-top: 10px; }
+.sondag-kort h2 { margin-top: 6px; font-size: clamp(30px, 4vw, 44px); hyphens: auto; } /* avstavas hellre än att gå utanför kortet */
+.sondag-pris { font-size: var(--s-brod); margin-top: 10px; }
 .sondag-pris span { color: var(--guld-text); }
-.sondag-ratter { list-style: none; padding: 0; margin: 22px 0 26px; display: grid; gap: 14px; font-size: var(--s-ratt); line-height: 1.3; }
+.sondag-ratter { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 12px; font-size: var(--s-brod); line-height: 1.3; }
 .sondag-ratter small { display: block; font-size: var(--s-liten); font-style: italic; color: var(--dampad); margin-bottom: 2px; }
 .sondag-grid picture img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
@@ -199,7 +199,7 @@ footer img { width: 140px; margin-bottom: 14px; }
   .om-bild img { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 620px) {
-  :root { --s-h3: 30px; --s-ratt: 22px; --s-brod: 18px; }
+  :root { --s-h3: 30px; --s-ratt: 22px; --s-brod: 17px; }
   body { padding-bottom: 76px; }
   .topp .knapp { display: none; }
   .hero { min-height: 82vh; }
